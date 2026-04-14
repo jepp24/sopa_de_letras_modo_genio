@@ -1,0 +1,6 @@
+{
+  "appId": "com.emilio.sopadeletras",
+  "appName": "Sopa de Letras",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
