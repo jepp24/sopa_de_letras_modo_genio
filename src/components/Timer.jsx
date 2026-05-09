@@ -22,6 +22,7 @@ export default function Timer({ initialSeconds, onTimeUp, isRunning, addSecondsE
         }
     }, [addSecondsEvent, initialSeconds]);
 
+    // Single interval — only recreated when isRunning changes
     useEffect(() => {
         let interval = null;
         if (isRunning) {

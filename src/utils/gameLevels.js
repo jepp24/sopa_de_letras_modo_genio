@@ -1,7 +1,7 @@
 // gameLevels.js
 
 const allWordsDictionary = [
-    // Aerolineas
+    // Aerolíneas
     "AVIANCA", "LATAM", "IBERIA", "EMIRATES", "LUFTHANSA",
     "RYANAIR", "EASYJET", "QANTAS", "DELTA", "UNITED",
     "AMERICAN", "AIRFRANCE", "KLM", "QATAR", "COPA",

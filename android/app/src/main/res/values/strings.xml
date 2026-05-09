@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Sopa de Letras</string>
-    <string name="title_activity_main">Sopa de Letras</string>
+    <string name="app_name">Sopa de Letras: Modo Genio</string>
+    <string name="title_activity_main">Sopa de Letras: Modo Genio</string>
     <string name="package_name">com.emilio.sopadeletras</string>
     <string name="custom_url_scheme">com.emilio.sopadeletras</string>
 </resources>

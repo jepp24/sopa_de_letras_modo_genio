@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { generateGrid } from './utils/wordSearchGenerator';
 import { getLevelConfig } from './utils/gameLevels';
 import { playBeep, playAlertSound, playAnguishSound, setSoundEnabled } from './utils/audio';
@@ -229,27 +229,59 @@ function App() {
     return (
         <div className="app-container">
             {gameState === 'START_SCREEN' && (
-                <div className="start-screen">
-                    <div className="hero-section">
-                        <h1>Sopa de Letras</h1>
-                        <div className="badge-premium">PREMIUM EDITION</div>
+                <div className="home-container-premium">
+                    {/* Background Orbs and Particles */}
+                    <div className="bg-glow-top"></div>
+                    <div className="bg-glow-bottom"></div>
+                    <div className="particle-container">
+                        {particleData.map((p, i) => (
+                            <div key={i} className="particle" style={{
+                                top: p.top,
+                                left: p.left,
+                                animationDelay: p.delay,
+                                fontSize: p.size
+                            }}>
+                                {p.char}
+                            </div>
+                        ))}
                     </div>
+
+                    <header className="hero-section">
+                        <h1 className="main-title-premium">
+                            <span className="title-sopa-de">SOPA DE</span><br />
+                            <span className="title-letras">LETRAS</span>
+                        </h1>
+                        <div className="subtitle-container-premium">
+                            <div className="gold-line"></div>
+                            <span className="subtitle-text">MODO GENIO</span>
+                            <div className="gold-line"></div>
+                        </div>
+                    </header>
                     
-                    <div className="menu-buttons">
-                        <button className="btn-primary main-action" onClick={() => setGameState('LEVEL_SELECT')}>
-                            🎮 JUGAR
-                        </button>
-                        <button className="btn-secondary" onClick={() => setShowSettings(true)}>
-                            ⚙️ CONFIGURACIÓN
-                        </button>
-                        <button className="btn-icon" onClick={exitApp} style={{marginTop: '10px'}}>
-                            🚪 SALIR
+                    <div className="main-actions">
+                        <button className="btn-play-premium" onClick={() => setGameState('LEVEL_SELECT')}>
+                            <span className="play-icon">🎮</span> JUGAR
                         </button>
                     </div>
 
-                    <div className="footer-info">
-                        V 1.0.0 • by Emilio
+                    <div className="secondary-actions-premium">
+                        <div className="action-item-premium">
+                            <button className="btn-circle-premium" onClick={() => setShowSettings(true)}>
+                                ⚙️
+                            </button>
+                            <span className="action-label-premium">CONFIGURACIÓN</span>
+                        </div>
+                        <div className="action-item-premium">
+                            <button className="btn-circle-premium" onClick={exitApp}>
+                                🚪
+                            </button>
+                            <span className="action-label-premium">SALIR</span>
+                        </div>
                     </div>
+
+                    <footer className="footer-premium">
+                        V 1.0.0 • by Emilio
+                    </footer>
 
                     {showSettings && (
                         <div className="overlay">
